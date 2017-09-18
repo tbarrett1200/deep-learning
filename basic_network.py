@@ -85,7 +85,7 @@ class Layer(object):
         return self.W.T.dot(dZ)
 
 network = Network([1, 1])
-print("Network Created")
+print("Network Created ")
 print("---------------")
 network.train(train_x, train_y, 0.1, 100, 10, do_print=True)
 print("---------------")
