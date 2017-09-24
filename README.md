@@ -8,4 +8,9 @@ Completed introductory online course on Machine Learning from Coursera
 ### September 14
 Created GitHub Repository to store and document work as well as provide example code and explanations
 ### September 14-18
-Created Simple example. Multidimensional function regression
+Created a simple framework to create and train deep neural networks of arbitrary size. Configured to train on a simple linear function.
+### September 19-21
+Studied Optimization Techniques
+- Normalization
+- Initialization
+- Regularization
