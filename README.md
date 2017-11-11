@@ -13,6 +13,7 @@ Learning Python: 5th Edition by Mark Lutz
 * Subspaces and the basis for a subspace
 * Vector dot and cross product
 * null Space and column space
+
 Introduction to Linear Algebra: 4th Edition by Gilbert Strang (Chapters 1-3)
 * Introduction to Vectors
 * Solving Linear Equations
