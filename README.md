@@ -1,4 +1,6 @@
-# Activities Log and Study Materials
+## Activities Log and Study Materials
+
+# Prerequisite Knowledge
 
 Learning Python: 5th Edition by Mark Lutz
 
@@ -11,11 +13,12 @@ Learning Python: 5th Edition by Mark Lutz
 * Subspaces and the basis for a subspace
 * Vector dot and cross product
 * null Space and column space
-
 Introduction to Linear Algebra: 4th Edition by Gilbert Strang (Chapters 1-3)
 * Introduction to Vectors
 * Solving Linear Equations
 * Vector Spaces and Subspaces
+
+# Nueral Networks
 
 [Coursera: Neural Networks and Deep Learning](https://www.coursera.org/learn/convolutional-neural-networks/home/welcome)
 (4 weeks, 3 to 6 hours/week)
@@ -50,8 +53,89 @@ Deep Learning Book by Ian Goodfellow
 * Probability and Information Theory
 * Machine Learning Basics
 
+# Frameworks
+
 [Tensorflow Documentation](https://www.tensorflow.org/get_started/)
 * Getting Started with Tensorflow (Iris Data Set)
 * MNIST for ML Beginners
 * Deep MNIST for Experts
 * Tensorflow Mechanics 101
+
+## Projects
+
+# Homespun Deep Artifical Neural Network Framework
+Use application of knowledge of Nueral Networks to implement a system to perform multi-variable function regression on sample data points. Currently in progress is extending the system to perform classification as well as capabilities for optimization algorithms.
+
+``` Python
+class Layer(object):
+    def __init__(self, previous, size, func = f.relu):
+        self.W = np.random.randn(size, previous) * np.sqrt(2/previous)
+        self.b = np.zeros((size, 1))
+
+        self.x = None
+        self.m = None
+
+        self.z = None
+        self.a = None
+
+        self.dW = None
+        self.db = None
+
+        self.f = func
+
+    def forward(self, x):
+        self.x = x
+        self.m = x.shape[1]
+        self.z = self.W.dot(self.x) + self.b
+        self.a = self.f(self.z)
+        return self.a
+
+    def backward(self, dA):
+        dZ = dA * self.f(self.z, d = True)
+        self.dW = 1/self.m * dZ.dot(self.x.T)
+        self.db = 1/self.m * np.sum(dZ, axis=1, keepdims=True)
+        return self.W.T.dot(dZ)
+```
+Code Excerpt for Basic Implementation of a Nueral Netork Layer
+
+``` Python
+class Network(object):
+    def __init__(self, dims, f_output = f.linear):
+        self.layers = []
+
+        for dim in range(1,len(dims)):
+            self.layers.append(Layer(dims[dim-1], dims[dim]))
+
+        self.layers[-1].f = f_output
+
+    def forward_propogate(self, x):
+        for layer in self.layers:
+            x = layer.forward(x)
+
+    def backward_propogate(self, dA):
+        for layer in reversed(self.layers):
+            dA = layer.backward(dA)
+
+    def train(self, x, y, alpha, epochs, print_rate, do_print=False):
+        for i in range(1, epochs+1):
+            self.forward_propogate(x)
+            self.backward_propogate(self.cost(x, y, d = True))
+
+            if i%print_rate == 0 and do_print:
+                print(str(i)+":",np.round(self. cost(x, y), 6))
+
+            for l in self.layers:
+                l.W = l.W - alpha * l.dW
+                l.b = l.b - alpha * l.db
+
+    def cost(self, x, y, d = False, propogate = False):
+
+        if propogate:
+            self.forward_propogate(x)
+
+        if d:
+            return self.layers[-1].a - y
+        else:
+            return np.squeeze(1/(2*self.layers[-1].m) * np.sum((self.layers[-1].a - y) ** 2, axis=1, keepdims=True))
+```
+Code Excerpt for Basic Implementation of a complete Nueral Netork
