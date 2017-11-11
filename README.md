@@ -1,6 +1,6 @@
-## Activities Log and Study Materials
+# Activities Log and Study Materials
 
-# Prerequisite Knowledge
+## Prerequisite Knowledge
 
 Learning Python: 5th Edition by Mark Lutz
 
@@ -61,9 +61,9 @@ Deep Learning Book by Ian Goodfellow
 * Deep MNIST for Experts
 * Tensorflow Mechanics 101
 
-## Projects
+# Projects
 
-# Homespun Deep Artifical Neural Network Framework
+## Homespun Deep Artifical Neural Network Framework
 Use application of knowledge of Nueral Networks to implement a system to perform multi-variable function regression on sample data points. Currently in progress is extending the system to perform classification as well as capabilities for optimization algorithms.
 
 ``` Python
