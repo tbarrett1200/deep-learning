@@ -18,7 +18,7 @@ Introduction to Linear Algebra: 4th Edition by Gilbert Strang (Chapters 1-3)
 * Solving Linear Equations
 * Vector Spaces and Subspaces
 
-# Nueral Networks
+## Nueral Networks
 
 [Coursera: Neural Networks and Deep Learning](https://www.coursera.org/learn/convolutional-neural-networks/home/welcome)
 (4 weeks, 3 to 6 hours/week)
@@ -53,7 +53,7 @@ Deep Learning Book by Ian Goodfellow
 * Probability and Information Theory
 * Machine Learning Basics
 
-# Frameworks
+## Frameworks
 
 [Tensorflow Documentation](https://www.tensorflow.org/get_started/)
 * Getting Started with Tensorflow (Iris Data Set)
