@@ -139,3 +139,13 @@ class Network(object):
             return np.squeeze(1/(2*self.layers[-1].m) * np.sum((self.layers[-1].a - y) ** 2, axis=1, keepdims=True))
 ```
 Code Excerpt for Basic Implementation of a complete Nueral Netork
+
+# Moving Forward
+## Learn about more advanced nueral network architectures
+* Learn about Convolutional Networks ande Recurrent Networks in more detail
+* Complete Coursera course on Convolutional Nueral Networks
+* Read Module 2 of Stanford notes on convolution
+* Read Chapters in Deep Learning Book on Convolution
+* Implement convolutional layers in Python with NumPy
+## Complete Independent Project
+* Use Nueral Network to create an intelligent, learning CPU opponent in game.
