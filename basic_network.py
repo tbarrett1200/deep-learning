@@ -54,7 +54,6 @@ class Network(object):
         else:
             return np.squeeze(1/(2*self.layers[-1].m) * np.sum((self.layers[-1].a - y) ** 2, axis=1, keepdims=True))
 
-
 class Layer(object):
     def __init__(self, previous, size, func = f.relu):
         self.W = np.random.randn(size, previous) * np.sqrt(2/previous)
